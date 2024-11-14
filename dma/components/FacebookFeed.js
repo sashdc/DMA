@@ -38,10 +38,10 @@ const FacebookFeed = () => {
       data-show-facepile="true"
     >
       <blockquote
-        cite="https://www.facebook.com/your-page"
+        cite="https://www.facebook.com/determinationMA"
         className="fb-xfbml-parse-ignore"
       >
-        <a href="https://www.facebook.com/your-page">Your Facebook Page</a>
+        <a href="https://www.facebook.com/determinationMA">Your Facebook Page</a>
       </blockquote>
     </div>
   );

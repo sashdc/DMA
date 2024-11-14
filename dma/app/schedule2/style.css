@@ -1,0 +1,83 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #bb1e1e;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Class item styling */
+  .class-item {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .class-item h2 {
+    font-size: 1.2rem;
+    color: #0070f3;
+    margin: 0 0 10px 0;
+  }
+  
+  .class-item p {
+    color: #666;
+    margin: 5px 0;
+  }
+  
+  /* Registration link styling */
+  .class-item a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #0070f3;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .class-item a:hover {
+    background-color: #005bb5;
+  }
+  
+  /* Filter section styling */
+  .filter-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section label {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .filter-section input[type="checkbox"],
+  .filter-section input[type="radio"] {
+    margin-right: 8px;
+  }
+  
+  .filter-section input[type="text"],
+  .filter-section input[type="number"] {
+    padding: 6px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
