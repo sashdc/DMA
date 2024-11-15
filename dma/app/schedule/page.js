@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import './schedule.css';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Modal from '../../components/modal/modal'; 
+import "./schedule.css";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Modal from "../../components/modal/modal";
 
 const ClassesPage = () => {
   const [classesData, setClassesData] = useState([]);
@@ -20,8 +20,8 @@ const ClassesPage = () => {
     sat: false,
     sun: false,
   });
-  const [modalData, setModalData] = useState(null);  // State for modal data
-  const [isModalOpen, setIsModalOpen] = useState(false);  // State for modal visibility
+  const [modalData, setModalData] = useState(null); // State for modal data
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +37,7 @@ const ClassesPage = () => {
       );
       setClassesData(data.rows);
       setFilteredClasses(data.rows);
+      console.log(data)
     };
 
     fetchData();
@@ -66,12 +67,16 @@ const ClassesPage = () => {
 
     if (minAge) {
       const minMonths = parseInputAgetoMonths(minAge);
-      filtered = filtered.filter((row) => parseAgeToMonths(row.min_age) >= minMonths);
+      filtered = filtered.filter(
+        (row) => parseAgeToMonths(row.min_age) >= minMonths
+      );
     }
 
     if (maxAge) {
       const maxMonths = parseInputAgetoMonths(maxAge);
-      filtered = filtered.filter((row) => parseAgeToMonths(row.max_age) <= maxMonths);
+      filtered = filtered.filter(
+        (row) => parseAgeToMonths(row.max_age) <= maxMonths
+      );
     }
 
     if (selectedDate) {
@@ -94,11 +99,12 @@ const ClassesPage = () => {
   }, [minAge, maxAge, selectedDate, selectedDays]);
 
   const openModal = (classData) => {
-    setModalData(classData);  // Set the class data for the modal
-    setIsModalOpen(true);  // Open the modal
+    setModalData(classData); // Set the class data for the modal
+    setIsModalOpen(true); // Open the modal
   };
+
   const closeModal = () => {
-    setIsModalOpen(false);  // Close the modal
+    setIsModalOpen(false); // Close the modal
   };
 
   if (!classesData.length) {
@@ -164,32 +170,38 @@ const ClassesPage = () => {
         <tbody>
           {filteredClasses.length > 0 ? (
             filteredClasses.map((row, index) => (
-              <tr key={index}>
-                <td>
-                  <a onClick={() => openModal(row)}>{row.name || "N/A"}</a>
+              <tr key={index} onClick={() => openModal(row)} className="class-row">
+                <td >
+                  <div id='class-name' >{row.name || "N/A"}</div>
                 </td>
-                <td>{`${row.category1 || ''} / ${row.category2 || ''}`}</td>
+                <td>{`${row.category1 || ""} / ${row.category2 || ""}`}</td>
                 <td>{row.start_date || "N/A"}</td>
                 <td>{row.end_date || "N/A"}</td>
                 <td>${(row.tuition.fee || 0).toFixed(2)}</td>
                 <td>{`${row.min_age || "N/A"} - ${row.max_age || "N/A"}`}</td>
-                <td>{Object.keys(row.meeting_days).filter(day => row.meeting_days[day]).join(", ") || "N/A"}</td>
+                <td>
+                  {Object.keys(row.meeting_days)
+                    .filter((day) => row.meeting_days[day])
+                    .join(", ") || "N/A"}
+                </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="8">No classes available based on the selected filters.</td>
+              <td colSpan="8">
+                No classes available based on the selected filters.
+              </td>
             </tr>
           )}
         </tbody>
       </table>
 
       {/* Modal */}
-    {/* Modal */}
-    <Modal 
-        isOpen={isModalOpen} 
-        onClose={closeModal} 
-        classDetails={modalData} 
+      {/* Modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        classDetails={modalData}
       />
     </div>
   );
