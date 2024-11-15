@@ -24,12 +24,14 @@ const Modal = ({ isOpen, onClose, classDetails }) => {
         onClick={(e) => e.stopPropagation()}
       >
         <h2>{classDetails?.name}</h2>
-        <p><strong>Category:</strong> {`${classDetails?.category1} / ${classDetails?.category2}`}</p>
-        <p><strong>Location:</strong> {classDetails?.location_name}</p>
-        <p><strong>Start Date:</strong> {classDetails?.start_date}</p>
-        <p><strong>End Date:</strong> {classDetails?.end_date}</p>
-        <p><strong>Fee:</strong> ${classDetails?.tuition.fee}</p>
+        {/* <p><strong>Category:</strong> {`${classDetails?.category1} / ${classDetails?.category2}`}</p> */}
+        {/* <p><strong>Location:</strong> {classDetails?.location_name}</p> */}
+        {/* <p><strong>Start Date:</strong> {classDetails?.start_date}</p> */}
+        {/* <p><strong>End Date:</strong> {classDetails?.end_date}</p> */}
+        <p><strong>Instructor:</strong>{classDetails?.instructors[0]}</p>
         <p><strong>Age Range:</strong> {classDetails?.min_age} - {classDetails?.max_age}</p>
+        <p><strong>Fee:</strong> ${classDetails?.tuition.fee}</p>
+
         <p><strong>Description:</strong> {classDetails?.description}</p>
         <button onClick={onClose}>Close</button>
       </div>

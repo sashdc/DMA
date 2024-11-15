@@ -27,10 +27,6 @@ body {
   cursor: pointer;
 }
 
-.class-row:hover{
-  /* background-color: #f1f1f1; */
-}
-
   #class-name{
     color: #093f0b;
     font-weight: bolder;
@@ -119,6 +115,11 @@ body {
   
   button:hover {
     background-color: #45a049;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  button:active {
+    background-color: #3e8e41;
   }
   
   button:disabled {

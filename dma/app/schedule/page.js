@@ -37,7 +37,7 @@ const ClassesPage = () => {
       );
       setClassesData(data.rows);
       setFilteredClasses(data.rows);
-      console.log(data)
+      console.log(data);
     };
 
     fetchData();
@@ -60,6 +60,13 @@ const ClassesPage = () => {
 
   const parseInputAgetoMonths = (age) => {
     return age * 12;
+  };
+
+  const twelveHour = (time) => {
+    const [hours, minutes] = time.split(":");
+    const suffix = hours >= 12 ? "PM" : "AM";
+    const displayHours = hours % 12 || 12;
+    return `${displayHours}:${minutes} ${suffix}`;
   };
 
   const filterClasses = () => {
@@ -160,32 +167,67 @@ const ClassesPage = () => {
           <tr>
             <th>Name</th>
             <th>Category</th>
-            <th>Start Date</th>
-            <th>End Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
             <th>Fee</th>
-            <th>Age Range</th>
+            {/* <th>Age Range</th> */}
             <th>Days</th>
+            <th>Register</th>
           </tr>
         </thead>
         <tbody>
           {filteredClasses.length > 0 ? (
-            filteredClasses.map((row, index) => (
-              <tr key={index} onClick={() => openModal(row)} className="class-row">
-                <td >
-                  <div id='class-name' >{row.name || "N/A"}</div>
-                </td>
-                <td>{`${row.category1 || ""} / ${row.category2 || ""}`}</td>
-                <td>{row.start_date || "N/A"}</td>
-                <td>{row.end_date || "N/A"}</td>
-                <td>${(row.tuition.fee || 0).toFixed(2)}</td>
-                <td>{`${row.min_age || "N/A"} - ${row.max_age || "N/A"}`}</td>
-                <td>
-                  {Object.keys(row.meeting_days)
-                    .filter((day) => row.meeting_days[day])
-                    .join(", ") || "N/A"}
-                </td>
-              </tr>
-            ))
+            filteredClasses.map((row, index) => {
+              // Extract the preLoadClassID value from the online_reg_link
+              const match = row.online_reg_link.match(/preLoadClassID=(\d+)/);
+              const preLoadClassID = match ? match[1] : null;
+
+              // Generate the registration link
+              const registrationLink = preLoadClassID
+                ? `https://app.jackrabbitclass.com/regv2.asp?id=546238&preLoadClassID=${preLoadClassID}`
+                : "#";
+
+              // Determine the button label
+              const buttonLabel =
+                row.openings.calculated_openings > 0 ? "Register" : "Wait List";
+
+              return (
+                <tr
+                  key={index}
+                  onClick={() => openModal(row)}
+                  className="class-row"
+                >
+                  <td>
+                    <div id="class-name">{row.name || "N/A"}</div>
+                  </td>
+                  <td>{`${row.category2 || ""}`}</td>
+                  {/* <td>{`${row.category1 || ""} / ${row.category2 || ""}`}</td> */}
+                  <td>{twelveHour(row.start_time) || "N/A"}</td>
+                  <td>{twelveHour(row.end_time) || "N/A"}</td>
+                  <td>${(row.tuition.fee || 0).toFixed(2)}</td>
+                  {/* <td>{`${row.min_age || "N/A"} - ${row.max_age || "N/A"}`}</td> */}
+                  <td>
+                    {Object.keys(row.meeting_days)
+                      .filter((day) => row.meeting_days[day])
+                      .join(", ")
+                      .toUpperCase() || "N/A"}
+                  </td>
+                  <td>
+                    {preLoadClassID ? (
+                      <a
+                        href={registrationLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <button>{buttonLabel}</button>
+                      </a>
+                    ) : (
+                      "Contact us to register"
+                    )}
+                  </td>
+                </tr>
+              );
+            })
           ) : (
             <tr>
               <td colSpan="8">
