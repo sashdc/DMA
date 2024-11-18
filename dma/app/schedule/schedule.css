@@ -30,11 +30,13 @@ body {
   #class-name{
     color: #093f0b;
     font-weight: bolder;
+    transition: 0.3s ease;
+
   }
 
   .class-row:hover #class-name{
     color: #0d6e0b;
-    scale: 1.03;
+    scale: 1.04;
     transition: 0.3s ease;
   }
   

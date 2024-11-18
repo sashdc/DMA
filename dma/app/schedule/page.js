@@ -222,7 +222,7 @@ const ClassesPage = () => {
                         <button>{buttonLabel}</button>
                       </a>
                     ) : (
-                      "Contact us to register"
+                      <button>Contact us to register</button>
                     )}
                   </td>
                 </tr>
