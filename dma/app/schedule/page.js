@@ -115,7 +115,13 @@ const ClassesPage = () => {
   };
 
   if (!classesData.length) {
-    return <div>Loading...</div>;
+    return (
+      <div className="d-flex justify-content-center">
+        <div className="spinner-border" role="output">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
   }
 
   return (

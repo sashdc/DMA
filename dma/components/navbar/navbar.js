@@ -11,9 +11,9 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Contact', path: '/contact' },
-    { name: 'Class List', path: '/schedule' },
     { name: 'About', path: '/about' },
+      { name: 'Class List', path: '/schedule' },
+    { name: 'Contact', path: '/contact' },
     { name: 'Gallery', path: '/gallery' },
   ];
 
