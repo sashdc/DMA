@@ -35,6 +35,42 @@ a {
   text-decoration: none;
 }
 
+/* Highlight for active nav items */
+.navbar-nav .nav-link.active-link {
+  font-weight: bolder; /* Make active item bold */
+  /* text-decoration: underline;  */
+  color: #761450; /* Optional: Change text color */
+  transition: all 0.3s ease -in-out;
+
+}
+
+/* Optional: Customize hover effect */
+.navbar-nav .nav-link:hover {
+  /* text-decoration: underline; */
+  font-weight: bold;
+  color: #a71670;
+  scale: 1.05; 
+  transition: all 0.3s ease -in-out;
+}
+
+
+/* Highlight icons on hover */
+.navbar .fa-facebook,
+.navbar .fa-instagram {
+  color: #6c757d; /* Default muted color */
+  transition: color 0.3s;
+}
+
+.navbar .fa-facebook:hover {
+  color: #3b5998; /* Facebook blue */
+}
+
+.navbar .fa-instagram:hover {
+  color: #c13584; /* Instagram gradient pink */
+}
+
+
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
