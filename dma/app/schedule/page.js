@@ -119,7 +119,7 @@ const ClassesPage = () => {
   }
 
   return (
-    <div>
+    <div className="class-list">
       <h1>Class Listings</h1>
 
       {/* Filters */}
