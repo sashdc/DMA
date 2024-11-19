@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Outfit } from "next/font";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import Script from 'next/script'
@@ -18,6 +19,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+
 
 export const metadata = {
   title: "Determination Martial Arts",

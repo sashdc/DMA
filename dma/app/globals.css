@@ -69,6 +69,23 @@ a {
   color: #c13584; /* Instagram gradient pink */
 }
 
+.body-content{
+  padding: 20px;
+  /* min-height: 100vh; */
+  }
+
+.body-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.body-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 
 
 @media (prefers-color-scheme: dark) {
