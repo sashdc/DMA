@@ -1,42 +1,32 @@
-// components/InstagramFeed.js
-import { useEffect, useState } from 'react';
-import styles from './InstagramFeed.module.css';
+import React, { useEffect } from "react";
+import Instafeed from "instafeed.js";
 
 const InstagramFeed = () => {
-  const [posts, setPosts] = useState([]);
+  const token = process.env.NEXT_PUBLIC_INSTA_TOKEN;
+  console.log('Token:', token);
+  
 
-  useEffect(() => {
-    const fetchInstagramPosts = async () => {
-      try {
-        const response = await fetch('/api/instagram');
-        
-        // Check if response is OK and parse JSON
-        if (!response.ok) {
-          console.error('Failed to fetch posts:', response.statusText);
-          return;
-        }
-        
-        const data = await response.json();
-        setPosts(data);
-      } catch (error) {
-        console.error('Error fetching Instagram posts:', error);
-      }
-    };
+  
 
-    fetchInstagramPosts();
-  }, []);
+useEffect(() => {
+  const feed = new Instafeed({
+    accessToken: token, // Access token from .env
+    target: "instafeed", // The ID of the target div
+    limit: 12, // Number of posts to display
+    template: `
+      <a href="{{link}}" target="_blank" rel="noopener noreferrer">
+        <img src="{{image}}" alt="{{caption}}" style="width: 275px; height: 275px; margin-bottom: 5px;" />
+      </a>
+    `,
+  });
+
+  feed.run();
+}, []);
+
 
   return (
-    <div className={styles.grid}>
-      {posts.length > 0 ? (
-        posts.map((post) => (
-          <a key={post.id} href={post.permalink} target="_blank" rel="noopener noreferrer">
-            <img src={post.media_url} alt={post.caption || 'Instagram post'} className={styles.image} />
-          </a>
-        ))
-      ) : (
-        <p>No posts available</p>
-      )}
+    <div>
+      <div id="instafeed" className="instagram-feed"></div>
     </div>
   );
 };

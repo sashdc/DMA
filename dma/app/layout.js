@@ -1,5 +1,4 @@
 import localFont from "next/font/local";
-import { Outfit } from "next/font";
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import Script from 'next/script'

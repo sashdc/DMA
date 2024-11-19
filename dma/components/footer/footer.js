@@ -5,13 +5,12 @@ import "./footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer d-flex">
+    <footer className="footer">
       {/* Left Side: Animated Text */}
       <div className="footer-animation">
-  <div className="animated-text">I CAN</div>
-  <div className="animated-text">I WILL</div>
-</div>
-
+        <div className="animated-text">I CAN</div>
+        <div className="animated-text">I WILL</div>
+      </div>
 
       {/* Right Side: Details */}
       <div className="footer-details">
@@ -37,10 +36,14 @@ const Footer = () => {
             <p>Phone: (123) 456-7890</p>
           </div>
         </div>
-        <div className="footer-row">
+        <div className="footer-row footer-links">
+        <Link href="/">Home</Link>
+
           <Link href="/about">About</Link>
-          <Link href="/services">Services</Link>
+          <Link href="/schedule">Class List</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/gallery">Gallery</Link>
+
         </div>
         <div className="footer-row">
           <p>&copy; 2024 Determination Martial Arts. All rights reserved.</p>
