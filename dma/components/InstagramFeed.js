@@ -4,7 +4,6 @@ import "./InstaFeed.css";
 
 const InstagramFeed = () => {
   const token = process.env.NEXT_PUBLIC_INSTA_TOKEN;
-  console.log("Token:", token);
 
   useEffect(() => {
     const feed = new Instafeed({

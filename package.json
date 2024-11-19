@@ -6,6 +6,11 @@
     "axios": "^1.7.7",
     "dotenv": "^16.4.5",
     "instafeed.js": "^2.0.0",
-    "react-social-media-embed": "^2.5.17"
+    "jquery": "^3.7.1",
+    "lightbox2": "^2.11.5",
+    "react-grid-gallery": "^1.0.1",
+    "react-photo-album": "^3.0.2",
+    "react-social-media-embed": "^2.5.17",
+    "yet-another-react-lightbox": "^3.21.7"
   }
 }

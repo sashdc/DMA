@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import FacebookFeed from "../components/FacebookFeed";
 import InstagramFeed from "@/components/InstagramFeed";
 
@@ -29,9 +30,9 @@ export default function Home() {
           that values determination, resilience, and respect for every
           individual.
         </p>
-        <div className="btn-group d-flex space-around">
-        <button className="btn btn-primary">Learn More</button>
-        <button className="btn btn-secondary">Contact Us</button>
+        <div className="btn-box d-flex justify-content-around">
+        <Link href="/schedule"><button className="btn btn-primary">Learn More</button></Link>
+        <Link href="/contact"> <button className="btn btn-secondary">Contact Us</button></Link>
         </div>
         </div>
         <div id="facebook-feed">
