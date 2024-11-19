@@ -16,7 +16,7 @@ export default function Home() {
         <Carousel />
       </hero>
       <div className="body-content d-flex">
-        <div>
+        <div id="intro-blurb">
         <h1>Inclusive and Accessible Martial Arts in Hamilton, Ontario</h1>
         <p>
           Welcome to Determination Martial Arts—Hamilton’s community-centered,
@@ -30,8 +30,9 @@ export default function Home() {
           individual.
         </p>
         </div>
-        <FacebookFeed />
-
+        <div id="facebook-feed">
+        <FacebookFeed/>
+        </div>
       </div>
       <div className="body-content d-flex flex-column ">
         <h2>Follow us on Instagram <a href='https://www.instagram.com/determinationmartialarts/?hl=en'>@determinationmartialarts

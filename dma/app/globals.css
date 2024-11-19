@@ -88,18 +88,70 @@ a {
   text-align: center;
 }
 
+#intro-blurb{
+  /* margin-bottom: 20px; */
+  text-align: center;
+  flex: 3;
+}
+
+#facebook-feed{
+  flex:1;
+  border-radius: 20px;
+  /* padding: 20px; */
+}
+
 .instagram-feed{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  background-color: #17171743;
-  padding: 20px;
-  
+  gap: 10px;
+  background-color: #17171725;
+  padding: 40px 0px;
+  border-radius: 30px;
+  }
+
+
+    .instagram-feed img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+
+      }
+
+    .instagram-feed img:hover{
+      transform: scale(1.05);
+      rotate: 1deg;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0px 0px 10px 0px #000000;
+
+      }
+
+      /* custom trackbar and scroll bar */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6b0659;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ca0f0f;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #ff0000;
 }
 
 
 
+      
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -30,8 +30,8 @@ const FacebookFeed = () => {
       className="fb-page"
       data-href="https://www.facebook.com/determinationMA"
       data-tabs="timeline"
-      // data-width="700" // Set width or leave as "auto"
-      // data-height="600" // Set height or leave blank to fit content
+      data-width="1000" // Set width or leave as "auto"
+      data-height="600" // Set height or leave blank to fit content
       data-small-header="false"
       data-adapt-container-width="true"
       data-hide-cover="false"

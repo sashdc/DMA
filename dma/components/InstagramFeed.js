@@ -15,7 +15,7 @@ useEffect(() => {
     limit: 12, // Number of posts to display
     template: `
       <a href="{{link}}" target="_blank" rel="noopener noreferrer">
-        <img src="{{image}}" alt="{{caption}}" style="width: 275px; height: 275px; margin-bottom: 5px;" />
+        <img src="{{image}}" alt="{{caption}} className="insta-post" style="width: 275px; height: 275px; margin-bottom: 5px;" />
       </a>
     `,
   });
