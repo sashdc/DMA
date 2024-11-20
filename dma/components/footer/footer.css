@@ -1,8 +1,7 @@
 .footer {
   display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  padding: 10px;
+  /* justify-content: center; */
+  padding-top: 10px;
   margin-top: 10px;
   background-color: #D8EAEE;
   color: #181818;
@@ -16,7 +15,7 @@
   text-align: center;
   position: relative;
   height: 1.2em; /* Ensures proper height for animation */
-  overflow: hidden; /* Hides the non-visible text during animation */
+  /* overflow: hidden; Hides the non-visible text during animation */
 }
 
 .animated-text {
@@ -24,7 +23,7 @@
   width: 100%; /* Ensures text spans the full container */
   text-align: center;
   color: #BDD6DC;
-  font-size: 4rem;
+  font-size: 7rem;
 }
 
 .animated-text:first-child {
@@ -55,10 +54,10 @@
 
 
 .footer-details {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .footer-row {
@@ -66,21 +65,33 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .footer-links{
-  justify-content: space-evenly;
+  justify-content:space-evenly  ;
   font-weight: 700;
   padding: 2px;
-}
+  }
+
+  .footer-links a {
+    background-color: #bbd4da;
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
+
+  .footer-links a:hover {
+    background-color:#71939c;
+    color: #D8EAEE;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+  }
 
 .footer-social a {
   color: #181818;
   font-size: 35px;
   margin-right: 10px;
   transition: all 0.3s ease-in-out;
-
 
 }
 
@@ -102,12 +113,6 @@
 
 }
 
-.footer-row a:hover {
-  color: #f39c12;
-  font-weight: bold;
-  transition: all 0.1s ease-in-out;
-
-}
 
 footer p{
   margin-bottom: 0;

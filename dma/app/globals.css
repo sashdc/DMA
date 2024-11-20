@@ -107,7 +107,7 @@ a {
 }
 
 .instructor-list {
-  max-width: 300px; /* Optional: limits the container width */
+  max-width: 800px; 
   margin: 0 auto;   /* Centers the container */
 }
 
@@ -117,8 +117,16 @@ a {
   object-fit: cover; /* Ensures the image maintains aspect ratio */
   border-radius: 50%; /* Makes the image circular */
   border: 3px solid #ddd; /* Optional: adds a border around the image */
+  transition: all 0.3s ease-in-out;
+
 }
 
+.instructor-image:hover {
+  border: 3px solid #76145010; 
+  border-radius: 20%;
+  scale: 1.2;
+  transition: all 0.3s ease-in-out;
+}
 
 /* custom trackbar and scroll bar */
 ::-webkit-scrollbar {

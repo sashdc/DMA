@@ -125,7 +125,7 @@ const ClassesPage = () => {
   }
 
   return (
-    <div className="class-list">
+    <div className=" page-body d-flex flex-column">
       <h1>Class Listings</h1>
 
       {/* Filters */}
