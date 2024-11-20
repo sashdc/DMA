@@ -17,7 +17,7 @@ const fredoka = Fredoka({
 });
 
 // Import Poiret One font
-const poiretOne = Comfortaa({
+const comfortaa = Comfortaa({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],		
   variable: "--font-comfortaa", // Match CSS variable name
@@ -33,7 +33,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={fredoka.variable} >
+    <html lang="en" >
       <body className="page-container">
         <header>
           <Navbar />
