@@ -26,7 +26,7 @@ const Contact = () => {
             height="400"
             title="gmap"
             style={{ border: 0 }}
-            allowfullscreen=""
+            allowFullScreen={true}
             loading="lazy"
           ></iframe>
         </div>

@@ -33,10 +33,10 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="d-flex">
-            <Link href="/register">
+            <Link href="https://app.jackrabbitclass.com/regv2.asp?id=546238&hc=3,4,9" target="blank">
               <button className="btn btn-danger me-2 btn-sm">Register</button>
             </Link>
-            <Link href="/login">
+            <Link href="https://app.jackrabbitclass.com/jr3.0/ParentPortal/Login?orgId=546238" target="blank">
               <button className="btn btn-success btn-sm">Log In</button>
             </Link>
           </div>
@@ -82,7 +82,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Social Icons and Buttons */}
       </div>
     </nav>
   );
