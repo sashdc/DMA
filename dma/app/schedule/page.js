@@ -116,7 +116,7 @@ const ClassesPage = () => {
 
   if (!classesData.length) {
     return (
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center page-body">
         <div className="spinner-border" role="output">
           <span className="visually-hidden">Loading...</span>
         </div>

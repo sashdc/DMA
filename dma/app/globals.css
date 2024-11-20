@@ -67,19 +67,20 @@ a {
   color: #c13584; /* Instagram gradient pink */
 }
 
-.body-content {
-  padding: 20px;
+.page-body {
+  width: 80%;
+  margin: 0 auto;
   align-items: center;
   justify-content: center;
 }
 
-.body-content h1 {
+.page-body h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.body-content p {
+.page-body p {
   font-size: 1.2rem;
   margin-bottom: 20px;
   text-align: center;
@@ -98,7 +99,22 @@ a {
   padding: 20px;
 }
 
+.gallery-block{
+  min-height: 80vh;
+}
 
+.instructor-list {
+  max-width: 300px; /* Optional: limits the container width */
+  margin: 0 auto;   /* Centers the container */
+}
+
+.instructor-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* Ensures the image maintains aspect ratio */
+  border-radius: 50%; /* Makes the image circular */
+  border: 3px solid #ddd; /* Optional: adds a border around the image */
+}
 
 
 /* custom trackbar and scroll bar */

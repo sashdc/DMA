@@ -5,9 +5,9 @@ import ImageGallery from "@/components/gallery/gallery";
 const Gallery = () => {
   
     return (
-        <div>
+        <div className="page-body gallery-block">
             <h1>Gallery</h1>
-            <ImageGallery/>
+            <ImageGallery />
         </div>
     );
 };
