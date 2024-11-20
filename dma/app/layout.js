@@ -1,36 +1,39 @@
-import localFont from "next/font/local";
 import "./globals.css";
-import 'bootstrap/dist/css/bootstrap.css';
-import Script from 'next/script'
+import "bootstrap/dist/css/bootstrap.css";
+import Script from "next/script";
 import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { Fredoka, Comfortaa } from "next/font/google";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+config.autoAddCss = false;
+
+// Import Fredoka font
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-fredoka", // Match CSS variable name
 });
 
+// Import Poiret One font
+const poiretOne = Comfortaa({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],		
+  variable: "--font-comfortaa", // Match CSS variable name
+});
 
 export const metadata = {
   title: "Determination Martial Arts",
   description: "Hamilton's Community Martial Arts School",
   icons: {
-    icon: "/dma_fav.png", // Path to your favicon file
+    icon: "/dma_fav.png",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={fredoka.variable} >
       <body className="page-container">
         <header>
           <Navbar />
@@ -46,8 +49,6 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
       </body>
-   
     </html>
-
   );
 }
