@@ -37,16 +37,17 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-row footer-links">
-        <Link href="/">Home</Link>
+          <Link href="/">Home</Link>
 
           <Link href="/about">About</Link>
           <Link href="/schedule">Class List</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/gallery">Gallery</Link>
-
         </div>
         <div className="footer-row">
-          <p>&copy; 2024 Determination Martial Arts. All rights reserved.</p>
+          <p id="copyright">
+            &copy; 2024 Determination Martial Arts. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

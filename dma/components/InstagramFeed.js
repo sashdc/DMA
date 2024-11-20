@@ -37,6 +37,15 @@ const InstagramFeed = () => {
 
   return (
     <div>
+      <h3>
+        Follow us on Instagram{" "}
+        <a
+          href="https://www.instagram.com/determinationmartialarts/?hl=en"
+          target="blank"
+        >
+          @determinationmartialarts
+        </a>
+      </h3>
       <div id="instafeed" ref={feedRef} className="instagram-feed"></div>
     </div>
   );

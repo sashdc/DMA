@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
   padding-top: 10px;
   margin-top: 10px;
   background-color: #D8EAEE;
@@ -9,7 +9,7 @@
 }
 
 .footer-animation {
-  flex: 1;
+  flex: 3;
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
@@ -23,7 +23,7 @@
   width: 100%; /* Ensures text spans the full container */
   text-align: center;
   color: #BDD6DC;
-  font-size: 7rem;
+  font-size: 6rem;
 }
 
 .animated-text:first-child {
@@ -87,6 +87,13 @@
     transition: all 0.3s ease-in-out;
   }
 
+  .footer-links a:active {
+  scale: 0.95;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+
+  } 
+
 .footer-social a {
   color: #181818;
   font-size: 35px;
@@ -103,6 +110,7 @@
 
 .contact-info p {
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .footer-row a {
@@ -110,8 +118,8 @@
   text-decoration: none;
   margin-right: 10px;
   transition: all 0.3s ease-in-out;
-
 }
+
 
 
 footer p{

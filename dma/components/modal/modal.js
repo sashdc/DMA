@@ -23,7 +23,7 @@ const Modal = ({ isOpen, onClose, classDetails }) => {
         className="modal-content"
         onClick={(e) => e.stopPropagation()}
       >
-        <h2>{classDetails?.name}</h2>
+        <h3 className="">{classDetails?.name}</h3>
         {/* <p><strong>Category:</strong> {`${classDetails?.category1} / ${classDetails?.category2}`}</p> */}
         {/* <p><strong>Location:</strong> {classDetails?.location_name}</p> */}
         {/* <p><strong>Start Date:</strong> {classDetails?.start_date}</p> */}

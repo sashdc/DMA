@@ -39,9 +39,8 @@ export default function Home() {
         <FacebookFeed/>
         </div>
       </div>
-      <div className="body-content d-flex flex-column text-center ">
-        <h2>Follow us on Instagram <a href='https://www.instagram.com/determinationmartialarts/?hl=en' target="blank">@determinationmartialarts
-        </a></h2>
+      <div className=" flex-column text-center ">
+ 
       <InstagramFeed />
       </div>
       <div className="page-body d-flex flex-column">
