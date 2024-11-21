@@ -3,10 +3,10 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    background-color: #4646460a;
-    padding: 40px 0px;
-    border-radius: 20px;
-    box-shadow: 0px 14px 25px 5px #0000002c;
+    /* background-color: #4646460a; */
+    /* padding: 0px 0px; */
+    /* border-radius: 20px; */
+    /* box-shadow: 0px 14px 25px 5px #0000002c; */
   }
   
   .instagram-feed img {

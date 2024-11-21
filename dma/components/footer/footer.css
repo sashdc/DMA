@@ -1,8 +1,7 @@
 .footer {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  padding: 10px;
+  padding-top: 10px;
   margin-top: 10px;
   background-color: #D8EAEE;
   color: #181818;
@@ -10,55 +9,35 @@
 }
 
 .footer-animation {
-  flex: 1;
-  font-size: 4rem;
+  flex: 2;
+  font-size: 5rem;
+  font-family: "Caveat Brush", cursive;
   font-weight: bold;
   text-align: center;
   position: relative;
-  height: 1.2em; /* Ensures proper height for animation */
-  overflow: hidden; /* Hides the non-visible text during animation */
+  height: 1.2em; /* Ensures proper height for the animation */
+  opacity: .8;
 }
 
-.animated-text {
-  position: absolute;
-  width: 100%; /* Ensures text spans the full container */
-  text-align: center;
-  color: #BDD6DC;
-  font-size: 4rem;
+.typewriter-text {
+  display: inline-block;
+  border-right: 2px solid #bdd6dc;
+  animation: blink-caret 0.7s step-end infinite;
 }
 
-.animated-text:first-child {
-  animation: fadeOut 4s infinite;
-}
-
-.animated-text:last-child {
-  animation: fadeIn 4s infinite;
-}
-
-@keyframes fadeOut {
-  0%, 25% {
-    opacity: 1;
-  }
-  50%, 100% {
-    opacity: 0;
-  }
-}
-
-@keyframes fadeIn {
-  0%, 50% {
-    opacity: 0;
-  }
-  75%, 100% {
-    opacity: 1;
+/* Blinking caret animation */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
   }
 }
 
 
 .footer-details {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .footer-row {
@@ -66,21 +45,40 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .footer-links{
-  justify-content: space-evenly;
+  justify-content:space-evenly  ;
   font-weight: 700;
   padding: 2px;
-}
+  }
+
+  .footer-links a {
+    background-color: #bbd4da;
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
+
+  .footer-links a:hover {
+    background-color:#71939c;
+    color: #D8EAEE;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .footer-links a:active {
+  scale: 0.95;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
+
+  } 
 
 .footer-social a {
   color: #181818;
   font-size: 35px;
   margin-right: 10px;
   transition: all 0.3s ease-in-out;
-
 
 }
 
@@ -92,6 +90,7 @@
 
 .contact-info p {
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .footer-row a {
@@ -99,15 +98,9 @@
   text-decoration: none;
   margin-right: 10px;
   transition: all 0.3s ease-in-out;
-
 }
 
-.footer-row a:hover {
-  color: #f39c12;
-  font-weight: bold;
-  transition: all 0.1s ease-in-out;
 
-}
 
 footer p{
   margin-bottom: 0;

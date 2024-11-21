@@ -125,11 +125,11 @@ const ClassesPage = () => {
   }
 
   return (
-    <div className="class-list">
+    <div className=" page-body d-flex flex-column mb-5">
       <h1>Class Listings</h1>
 
       {/* Filters */}
-      <div>
+      <div className="class-filters">
         <label htmlFor="min-age">Min Age: </label>
         <input
           type="number"
@@ -151,8 +151,8 @@ const ClassesPage = () => {
           value={selectedDate}
           onChange={(e) => setSelectedDate(e.target.value)}
         /> */}
-        <div>
-          <h3>Filter by Days of the Week:</h3>
+        <div className="d-flex m-0">
+          <p>Filter by Days of the Week:</p>
           {["mon", "tue", "wed", "thu", "fri", "sat", "sun"].map((day) => (
             <label key={day}>
               <input
@@ -200,19 +200,19 @@ const ClassesPage = () => {
               return (
                 <tr
                   key={index}
-                  onClick={() => openModal(row)}
+                 
                   className="class-row"
                 >
-                  <td>
+                  <td  onClick={() => openModal(row)}>
                     <div id="class-name">{row.name || "N/A"}</div>
                   </td>
-                  <td>{`${row.category2 || ""}`}</td>
+                  <td  onClick={() => openModal(row)}>{`${row.category2 || ""}`}</td>
                   {/* <td>{`${row.category1 || ""} / ${row.category2 || ""}`}</td> */}
-                  <td>{twelveHour(row.start_time) || "N/A"}</td>
-                  <td>{twelveHour(row.end_time) || "N/A"}</td>
-                  <td>${(row.tuition.fee || 0).toFixed(2)}</td>
+                  <td  onClick={() => openModal(row)}>{twelveHour(row.start_time) || "N/A"}</td>
+                  <td  onClick={() => openModal(row)}>{twelveHour(row.end_time) || "N/A"}</td>
+                  <td  onClick={() => openModal(row)}>${(row.tuition.fee || 0).toFixed(2)}</td>
                   {/* <td>{`${row.min_age || "N/A"} - ${row.max_age || "N/A"}`}</td> */}
-                  <td>
+                  <td  onClick={() => openModal(row)}>
                     {Object.keys(row.meeting_days)
                       .filter((day) => row.meeting_days[day])
                       .join(", ")
@@ -228,7 +228,7 @@ const ClassesPage = () => {
                         <button>{buttonLabel}</button>
                       </a>
                     ) : (
-                      <button>Contact us to register</button>
+                      <a href="/contact" target="blank"><button >Contact us to register</button></a>
                     )}
                   </td>
                 </tr>

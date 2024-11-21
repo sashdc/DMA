@@ -1,49 +1,53 @@
-// components/FacebookFeed.js
 import { useEffect } from 'react';
 
 const FacebookFeed = () => {
   useEffect(() => {
-    // Dynamically load the Facebook SDK for JavaScript
+    // Dynamically load the Facebook SDK script
     if (typeof window !== 'undefined' && !window.FB) {
+      // Ensure the SDK is only loaded once
       window.fbAsyncInit = function () {
         FB.init({
-          xfbml: true,
-          version: 'v12.0',
+          xfbml: true, // Parse XFBML elements like the Facebook Page plugin
+          version: 'v21.0', // Facebook SDK version
+          appId: '780198726835349', // Replace with your own app ID
         });
       };
 
-      // Load the SDK
-      ((d, s, id) => {
-        let js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = 'https://connect.facebook.net/en_US/sdk.js';
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, 'script', 'facebook-jssdk');
+      // Add the SDK script to the page asynchronously
+      const script = document.createElement('script');
+      script.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v21.0&appId=780198726835349';
+      script.async = true;
+      script.defer = true;
+      script.crossOrigin = 'anonymous';
+      document.body.appendChild(script); // Add script tag to the body
     }
   }, []);
 
   return (
-    <div
-      className="fb-page"
-      data-href="https://www.facebook.com/determinationMA"
-      data-tabs="timeline"
-      data-width="1000" // Set width or leave as "auto"
-      data-height="600" // Set height or leave blank to fit content
-      data-small-header="false"
-      data-adapt-container-width="true"
-      data-hide-cover="false"
-      data-show-facepile="true"
-    >
-      <blockquote
-        cite="https://www.facebook.com/determinationMA"
-        className="fb-xfbml-parse-ignore"
+    <>
+      {/* Facebook Root Div for SDK initialization */}
+      <div id="fb-root"></div>
+
+      {/* Facebook Feed Plugin */}
+      <div
+        className="fb-page"
+        data-href="https://www.facebook.com/determinationMA"
+        data-tabs="timeline"
+        data-width="500" // Set the width of the plugin
+        data-height="500" // Let the height be auto based on content
+        data-small-header="false"
+        data-adapt-container-width="true"
+        data-hide-cover="false"
+        data-show-facepile="true"
       >
-        <a href="https://www.facebook.com/determinationMA">Your Facebook Page</a>
-      </blockquote>
-    </div>
+        <blockquote
+          cite="https://www.facebook.com/determinationMA"
+          className="fb-xfbml-parse-ignore"
+        >
+          <a href="https://www.facebook.com/determinationMA" target='blank'>Determination Martial Arts</a>
+        </blockquote>
+      </div>
+    </>
   );
 };
 
