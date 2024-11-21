@@ -17,7 +17,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar bg-light py-0 d-flex flex-column">
+    <nav className="navbar bg-liaght py-0 d-flex flex-column">
       <div className="navbar-social">
         <div className="d-flex flex-column align-items-center ms-4">
           <div className="d-flex mb-2">

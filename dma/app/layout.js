@@ -5,7 +5,7 @@ import Navbar from "@/components/navbar/navbar";
 import Footer from "@/components/footer/footer";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { Fredoka, Comfortaa } from "next/font/google";
+import { Fredoka, Comfortaa, Caveat_Brush } from "next/font/google";
 
 config.autoAddCss = false;
 
@@ -21,6 +21,13 @@ const comfortaa = Comfortaa({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],		
   variable: "--font-comfortaa", // Match CSS variable name
+});
+
+// Import Caveat Brush font
+const caveatBrush = Caveat_Brush({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-caveat-brush", // Match CSS variable name
 });
 
 export const metadata = {

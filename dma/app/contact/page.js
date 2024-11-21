@@ -31,7 +31,7 @@ const Contact = () => {
           ></iframe>
         </div>
       </div>
-      <h2>
+      <h2 className="mt-4">
         Or fill out the form below and we will get back to you as soon as we can
         :
       </h2>

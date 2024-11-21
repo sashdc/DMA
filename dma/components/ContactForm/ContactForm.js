@@ -1,8 +1,8 @@
 const ContactForm = () => {
     return (
-        <form style={{ width: "26rem" }}>
+        <form style={{ width: "36rem" }}>
       {/* Name input */}
-      <div data-mdb-input-init className="form-outline mb-4">
+      <div data-mdb-input-init className="form-outline mb-2">
         <input type="text" id="form4Example1" className="form-control" />
         <label className="form-label" htmlFor="form4Example1">
           Name
@@ -10,7 +10,7 @@ const ContactForm = () => {
       </div>
 
       {/* Email input */}
-      <div data-mdb-input-init className="form-outline mb-4">
+      <div data-mdb-input-init className="form-outline mb-2">
         <input type="email" id="form4Example2" className="form-control" />
         <label className="form-label" htmlFor="form4Example2">
           Email address
@@ -18,11 +18,11 @@ const ContactForm = () => {
       </div>
 
       {/* Message input */}
-      <div data-mdb-input-init className="form-outline mb-4">
+      <div data-mdb-input-init className="form-outline mb-2">
         <textarea
           className="form-control"
           id="form4Example3"
-          rows="4"
+          rows="8"
         ></textarea>
         <label className="form-label" htmlFor="form4Example3">
           Message
